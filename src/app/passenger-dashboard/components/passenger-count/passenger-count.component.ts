@@ -9,7 +9,12 @@ import { Passenger } from '../../models/Passenger';
 export class PassengerCountComponent implements OnInit {
 
   @Input()
-  items: Passenger[] = [];
+  items: Passenger[];
+
+  checkedInCount(items : Passenger []){
+    if(!items.length) return;
+    return (items.filter(item => item.checkedIn).length);
+  }
 
   constructor() { }
 

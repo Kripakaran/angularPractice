@@ -13,9 +13,18 @@ export class PassengerDetailComponent implements OnInit {
   @Input()
   details: Passenger;
 
+  editing: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onNameChange(name: string){
+    this.details.name = name;
+  }
+
+  toggleEdit(){
+    this.editing = !this.editing;
+  }
 }

@@ -3,13 +3,23 @@
     backgroundColor: (details.checkedIn ? 'green' : 'red') 
   }">
 </span>
-{{details.name}}
+<div *ngIf = "editing">
+  <input type = "text" [value]="details.name" (input) = "onNameChange(name.value)" #name>
+</div>
+<div *ngIf = "!editing">
+  {{ details.name }}
+</div>
 <div>
  Check In Date : 
- 
  {{ details.checkedDate ? (details.checkedDate | date : 'yMMMMd') : 'Not Checked in'}} 
 </div>
 <div>
 Children: {{details.children?.length || 0}}
 </div>
+
+<button (click) = "toggleEdit()">
+  {{ editing ? 'Done' : 'Edit'}}
+
+</button>
+
 </div>
