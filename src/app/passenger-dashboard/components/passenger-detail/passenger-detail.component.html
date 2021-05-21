@@ -1,0 +1,15 @@
+<div>
+<span class = "status" [ngStyle] = "{
+    backgroundColor: (details.checkedIn ? 'green' : 'red') 
+  }">
+</span>
+{{details.name}}
+<div>
+ Check In Date : 
+ 
+ {{ details.checkedDate ? (details.checkedDate | date : 'yMMMMd') : 'Not Checked in'}} 
+</div>
+<div>
+Children: {{details.children?.length || 0}}
+</div>
+</div>

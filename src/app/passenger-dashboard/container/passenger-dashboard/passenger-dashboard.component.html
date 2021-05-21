@@ -1,0 +1,10 @@
+<div class = "App">
+
+  <app-passenger-count
+  [items] = "passengers"
+  ></app-passenger-count>
+  <app-passenger-detail
+  *ngFor = "let passenger of passengers;"
+  [details] = "passenger"
+  ></app-passenger-detail>
+    </div>
