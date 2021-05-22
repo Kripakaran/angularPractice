@@ -3,8 +3,15 @@
   <app-passenger-count
   [items] = "passengers"
   ></app-passenger-count>
+
+
+  <div *ngFor = "let passenger of passengers;">
+    {{ passenger.name }}
+  </div>
   <app-passenger-detail
   *ngFor = "let passenger of passengers;"
   [details] = "passenger"
+  (edit) = "handleEdit($event)"
+  (remove) = "handleRemove($event)"
   ></app-passenger-detail>
     </div>
