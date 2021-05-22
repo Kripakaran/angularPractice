@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Passenger } from '../../models/Passenger';
+import { PassengerDashboardService } from './passenger-dashboard.service';
+
 
 
 
@@ -18,7 +20,7 @@ export class PassengerDashboardComponent implements OnInit {
   isHappy: boolean = true;
   passengers: Passenger[] = [];
 
-  constructor(){
+  constructor(private passengerService: PassengerDashboardService){
     this.title = '';
   }
   onClick(){
@@ -37,39 +39,9 @@ export class PassengerDashboardComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.passengers = [{
-      id: 1,
-      name: 'Kripa',
-      checkedIn: true,
-      checkedDate: 1490742000000,
-      children: [{
-        name: 'xxx',
-        age: 12
-      }
-    ]
-    },
-    {
-      id: 2,
-      name: 'Karan',
-      checkedIn: false,
-      children: [{
-        name: 'xxx',
-        age: 12
-      },
-        {
-          name: 'xyz',
-          age: 14
-        }
-    ]
-    },
-    {
-      id: 3,
-      name: 'Prabhakaran',
-      checkedIn: true,
-      checkedDate: 1491606000000
-    }
-  ]
-  
+    this.passengerService.getPassengers().subscribe(res => {
+      this.passengers = res;
+    });
   }
 
 
