@@ -1,45 +1,49 @@
 {
-    "passengers" : [{
-        "id": 1,
-        "name": "Kripa",
-        "checkedIn": true,
-        "checkedDate": 1490742000000,
-        "children": [{
+  "passengers": [
+    {
+      "id": 1,
+      "name": "Kripakaran",
+      "checkedIn": true,
+      "checkedDate": 1490742000000,
+      "children": [
+        {
           "name": "xxx",
           "age": 12
         }
       ]
-      },
-      {
-        "id": 2,
-        "name": "Karan",
-        "checkedIn": false,
-        "children": [{
+    },
+    {
+      "id": 2,
+      "name": "Karan",
+      "checkedIn": false,
+      "children": [
+        {
           "name": "xxx",
           "age": 12
         },
-          {
-            "name": "xyz",
-            "age": 14
-          }
+        {
+          "name": "xyz",
+          "age": 14
+        }
       ]
-      },
-      {
-        "id": 3,
-        "name": "Prabhakaran",
-        "checkedIn": true,
-        "checkedDate": 1491606000000
-      },
-      {
-        "id": 4,
-        "name": "Devi",
-        "checkedIn": true,
-        "checkedDate": 1490742000000,
-        "children": [{
+    },
+    {
+      "id": 3,
+      "name": "Prabhu",
+      "checkedIn": true,
+      "checkedDate": 1491606000000
+    },
+    {
+      "id": 4,
+      "name": "Hema Devi",
+      "checkedIn": true,
+      "checkedDate": 1490742000000,
+      "children": [
+        {
           "name": "yyy",
           "age": 23
         }
       ]
-      }
-    ]
-}   
+    }
+  ]
+}
