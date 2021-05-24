@@ -1,8 +1,12 @@
-<button (click) = "goBack()">
-    Go Back!
-</button>
+<div class ="app">
 
 <app-passenger-form
 [detail] = "passenger"
 (update) = handleUpdate($event)>
 </app-passenger-form>
+
+<button mat-raised-button color="accent" (click) = "goBack()" class="btn">
+    Go Back!
+</button>
+
+</div>

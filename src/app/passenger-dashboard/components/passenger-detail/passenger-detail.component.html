@@ -1,34 +1,42 @@
+
 <div class = "item">
 <span class = "status" [ngStyle] = "{
     backgroundColor: (details.checkedIn ? 'green' : 'red') 
   }">
 </span>
+
 <div *ngIf = "editing">
   <input type = "text" [value]="details.name" (input) = "onNameChange(name.value)" #name>
+
 </div>
-<div *ngIf = "!editing">
+<div *ngIf = "!editing" class = "mat-headline">
   {{ details.name }}
 </div>
 <div class = "item">
+  <div class = "mat-h2">
+    <mat-card>
  Check In Date : 
- {{ details.checkedDate ? (details.checkedDate | date : 'yMMMMd') : 'Not Checked in'}} 
+ {{ details.checkedDate ? (details.checkedDate | date : 'dd/MM/yyyy') : 'Not Checked in'}} 
+</mat-card>
+</div>
 </div>
 
+
 <div class = "example-button-row">
-  <div class = "example-flex-container">
-<button  mat-raised-button color="primary" (click) = "toggleEdit()">
+
+<button  mat-raised-button class="btn" color="primary" (click) = "toggleEdit()">
   {{ editing ? 'Done' : 'Edit'}}
 </button>
 
-<button mat-raised-button color="warn" (click)= "onRemove()">
+<button mat-raised-button class="btn" color="warn" (click)= "onRemove()">
   Remove
 </button>
 
-<button mat-raised-button color="accent" (click)= "toggleView()">
+<button mat-raised-button class="btn" color="accent" (click)= "toggleView()">
   View Passenger
 </button>
 
-</div>
+
 
 
 </div>

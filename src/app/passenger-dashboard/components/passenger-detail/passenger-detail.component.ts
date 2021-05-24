@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, Output, EventEmitter, OnChanges } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 import { Passenger } from '../../models/Passenger';
 
 @Component({
@@ -7,8 +8,6 @@ import { Passenger } from '../../models/Passenger';
   styleUrls: ['./passenger-detail.component.scss']
 })
 export class PassengerDetailComponent implements OnInit, OnChanges {
-
-
 
   @Input()
   details: Passenger;

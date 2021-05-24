@@ -10,6 +10,7 @@ import { PassengerDashboardModule } from './passenger-dashboard/passenger-dashbo
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import {MatTabsModule} from '@angular/material/tabs';
 
 const routes : Routes = [
   {path: '', component: HomeComponent, pathMatch: 'full'},
@@ -30,7 +31,8 @@ const routes : Routes = [
     BrowserAnimationsModule,
     PassengerDashboardModule,
     MatSliderModule,
-    MatButtonModule
+    MatButtonModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

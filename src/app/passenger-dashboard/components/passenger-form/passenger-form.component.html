@@ -1,9 +1,9 @@
-<div>
+<!-- <div>
     {{ detail | json }}
-</div>
+</div> -->
 
 <form (ngSubmit)="handleSubmit(form)" #form="ngForm" novalidate>
-    <div>
+    <div class="mat-title">
         Passenger Name:
         <input type = "text" name = "name" [ngModel] = "detail?.name" #fullname = "ngModel" required>
         <div *ngIf = "fullname.errors?.required && fullname.dirty" class = "error">
@@ -11,12 +11,12 @@
         </div>
     </div>
 
-    <div>
+    <div class="mat-title">
         Passenger ID:
         <input type = "number" name = "id" [ngModel] = "detail?.id" required>
     </div>
 
-    <div>Checked In:
+    <div class="mat-title">Checked In:
         <input type = "radio" [value] = "true" name = "checkedIn" [ngModel] = "detail?.checkedIn" (ngModelChange) = "onCheckIn($event)">
         Yes
     
@@ -32,13 +32,13 @@
     -->
 
 
-    <div *ngIf = "form.value.checkedIn">
+    <div *ngIf = "form.value.checkedIn" class="mat-title">
         Check-In Date:
         <input type = "number" name = "checkedDate" [ngModel] = "detail?.checkedDate">
     </div>
 
 
-    <div>
+    <div class="mat-title">
         Baggage: 
     <select name="baggage" [ngModel]="detail?.baggage">
         <option *ngFor = "let luggage of baggage" [value] = "luggage.key">
@@ -47,16 +47,16 @@
     </select>
     </div>  
 
-
+<!-- 
     <div>
         {{ form.value | json }}
-    </div>
+    </div> -->
 
     <!-- <div>Valid:  {{ form.valid | json }}</div>
     <div>Invalid: {{ form.invalid | json }}</div> -->
 
 
-    <button type = "submit" [disabled] = "form.invalid">
+    <button mat-raised-button color="primary" type = "submit" [disabled] = "form.invalid" class="btn">
         Update Passenger
     </button>
 

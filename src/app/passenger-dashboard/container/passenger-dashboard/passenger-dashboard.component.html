@@ -1,13 +1,15 @@
-<div class = "App">
+<div class = "app">
 
   <app-passenger-count
   [items] = "passengers"
   ></app-passenger-count>
 
 
-  <div *ngFor = "let passenger of passengers;">
+  <!-- <div *ngFor = "let passenger of passengers;">
     {{ passenger.name }}
-  </div>
+  </div> -->
+
+  
   <app-passenger-detail
   *ngFor = "let passenger of passengers;"
   [details] = "passenger"

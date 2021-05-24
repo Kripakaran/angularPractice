@@ -7,11 +7,14 @@ import { PassengerDashboardService } from './container/passenger-dashboard/passe
 import { HttpClientModule } from '@angular/common/http';
 import { PassengerViewerComponent } from './container/passenger-viewer/passenger-viewer.component';
 import { PassengerFormComponent } from './components/passenger-form/passenger-form.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatCardModule } from '@angular/material/card';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 // Initial approach to get passengers alone [ if u go to /passengers, u get this rendered]
 // const routes: Routes = [
@@ -47,7 +50,10 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     MatButtonModule,
     MatSliderModule,
-    MatDividerModule
+    MatDividerModule,
+    MatCardModule,
+    MatInputModule,
+    MatFormFieldModule
   ],
   exports: [
     PassengerDashboardComponent,
