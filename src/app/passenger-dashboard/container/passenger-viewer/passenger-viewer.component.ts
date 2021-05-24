@@ -23,7 +23,7 @@ export class PassengerViewerComponent implements OnInit {
     // });
 
 
-    // now, if u do "/passenger/1 or /passenger/2 , it will go to respective passenger"
+    // now, if u do "/passenger/1" or "/passenger/2" , it will go to respective passenger
 
     this.route.params.subscribe(res =>{
       // console.log(res);
@@ -43,6 +43,10 @@ export class PassengerViewerComponent implements OnInit {
       this.passenger = Object.assign({}, this.passenger, updated);
     })
 
+  }
+
+  goBack(){
+    this.router.navigate(['/passengers']); // note how we put '/passengers' within square braces
   }
 
 }

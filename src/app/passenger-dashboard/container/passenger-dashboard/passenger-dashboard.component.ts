@@ -1,5 +1,6 @@
 import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Passenger } from '../../models/Passenger';
 import { PassengerDashboardService } from './passenger-dashboard.service';
 
@@ -21,7 +22,7 @@ export class PassengerDashboardComponent implements OnInit {
   isHappy: boolean = true;
   passengers: Passenger[] = [];
 
-  constructor(private passengerService: PassengerDashboardService){
+  constructor(private router: Router, private passengerService: PassengerDashboardService){
     this.title = '';
   }
   onClick(){
@@ -70,5 +71,9 @@ export class PassengerDashboardComponent implements OnInit {
       })
     })
     console.log(this.passengers);
+  }
+
+  handleView(event: Passenger){
+    this.router.navigate(['/passengers' , event.id]);
   }
 }
