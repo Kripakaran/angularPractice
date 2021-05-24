@@ -1,4 +1,4 @@
-<div>
+<div class = "item">
 <span class = "status" [ngStyle] = "{
     backgroundColor: (details.checkedIn ? 'green' : 'red') 
   }">
@@ -9,25 +9,31 @@
 <div *ngIf = "!editing">
   {{ details.name }}
 </div>
-<div>
+<div class = "item">
  Check In Date : 
  {{ details.checkedDate ? (details.checkedDate | date : 'yMMMMd') : 'Not Checked in'}} 
 </div>
 
-<button (click) = "toggleEdit()">
+<div class = "example-button-row">
+  <div class = "example-flex-container">
+<button  mat-raised-button color="primary" (click) = "toggleEdit()">
   {{ editing ? 'Done' : 'Edit'}}
-
 </button>
-<div>
-<button (click)= "onRemove()">
+
+<button mat-raised-button color="warn" (click)= "onRemove()">
   Remove
 </button>
 
-<button (click)= "toggleView()">
+<button mat-raised-button color="accent" (click)= "toggleView()">
   View Passenger
 </button>
 
-
 </div>
 
+
 </div>
+<div class = "item">
+  <mat-divider></mat-divider>
+</div>
+</div>
+

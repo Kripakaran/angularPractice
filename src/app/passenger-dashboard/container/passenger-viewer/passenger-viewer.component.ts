@@ -34,7 +34,6 @@ export class PassengerViewerComponent implements OnInit {
     })
 
 
-
   }
 
   handleUpdate(updated: Passenger){

@@ -9,6 +9,9 @@ import { PassengerViewerComponent } from './container/passenger-viewer/passenger
 import { PassengerFormComponent } from './components/passenger-form/passenger-form.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
 
 // Initial approach to get passengers alone [ if u go to /passengers, u get this rendered]
 // const routes: Routes = [
@@ -41,7 +44,10 @@ const routes: Routes = [
     CommonModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    MatButtonModule,
+    MatSliderModule,
+    MatDividerModule
   ],
   exports: [
     PassengerDashboardComponent,

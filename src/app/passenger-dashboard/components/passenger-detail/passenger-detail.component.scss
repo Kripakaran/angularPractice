@@ -1,6 +1,19 @@
-.app {
-  
+.item {
+ margin-top: 20px;
 }
+
+.example-button-row {
+    display: table-cell;
+    width: 490px;
+  }
+
+  .example-flex-container {
+
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
 
 .status {
     width: 10px;
