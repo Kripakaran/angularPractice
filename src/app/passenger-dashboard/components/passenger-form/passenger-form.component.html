@@ -2,24 +2,25 @@
     {{ detail | json }}
 </div>
 
-<form #form="ngForm" novalidate>
+<form (ngSubmit)="handleSubmit(form)" #form="ngForm" novalidate>
     <div>
         Passenger Name:
-        <input type = "text" name = "name" [ngModel] = "detail?.name">
+        <input type = "text" name = "name" [ngModel] = "detail?.name" #fullname = "ngModel" required>
+        <div *ngIf = "fullname.errors?.required && fullname.dirty" class = "error">
+        Passenger Name is required!
+        </div>
     </div>
 
     <div>
         Passenger ID:
-        <input type = "number" name = "id" [ngModel] = "detail?.id">
+        <input type = "number" name = "id" [ngModel] = "detail?.id" required>
     </div>
 
-    <div>
+    <div>Checked In:
         <input type = "radio" [value] = "true" name = "checkedIn" [ngModel] = "detail?.checkedIn" (ngModelChange) = "onCheckIn($event)">
         Yes
-    </div>
+    
 
-
-    <div>
         <input type = "radio" [value] = "false" name = "checkedIn" [ngModel] = "detail?.checkedIn" (ngModelChange) = "onCheckIn($event)"> 
         No
     </div>
@@ -36,16 +37,28 @@
         <input type = "number" name = "checkedDate" [ngModel] = "detail?.checkedDate">
     </div>
 
-    <select>
-        <option *ngFor = "let luggage of baggage">
+
+    <div>
+        Baggage: 
+    <select name="baggage" [ngModel]="detail?.baggage">
+        <option *ngFor = "let luggage of baggage" [value] = "luggage.key">
             {{luggage.value}}
         </option>
     </select>
+    </div>  
 
 
     <div>
         {{ form.value | json }}
     </div>
+
+    <!-- <div>Valid:  {{ form.valid | json }}</div>
+    <div>Invalid: {{ form.invalid | json }}</div> -->
+
+
+    <button type = "submit" [disabled] = "form.invalid">
+        Update Passenger
+    </button>
 
 
 
