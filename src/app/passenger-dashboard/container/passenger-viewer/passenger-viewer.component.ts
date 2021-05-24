@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Passenger } from '../../models/Passenger';
 import { PassengerDashboardService } from '../passenger-dashboard/passenger-dashboard.service';
 
@@ -10,12 +11,30 @@ import { PassengerDashboardService } from '../passenger-dashboard/passenger-dash
 export class PassengerViewerComponent implements OnInit {
 
   passenger : Passenger;
-  constructor(private passengerService: PassengerDashboardService) { }
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private passengerService: PassengerDashboardService) { }
 
   ngOnInit(): void {
-    this.passengerService.getPassenger(1).subscribe(res => {
+    // initial version (hardcoded with 1)
+    // this.passengerService.getPassenger(1).subscribe(res => {
+    //   this.passenger = res;
+    // });
+
+
+    // now, if u do "/passenger/1 or /passenger/2 , it will go to respective passenger"
+
+    this.route.params.subscribe(res =>{
+      // console.log(res);
+      this.passengerService.getPassenger(res.id)
+      .subscribe(res => {
       this.passenger = res;
-    });
+      });
+    })
+
+
+
   }
 
   handleUpdate(updated: Passenger){

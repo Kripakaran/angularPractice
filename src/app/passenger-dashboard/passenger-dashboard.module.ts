@@ -8,6 +8,24 @@ import { HttpClientModule } from '@angular/common/http';
 import { PassengerViewerComponent } from './container/passenger-viewer/passenger-viewer.component';
 import { PassengerFormComponent } from './components/passenger-form/passenger-form.component';
 import { FormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
+
+// Initial approach to get passengers alone [ if u go to /passengers, u get this rendered]
+// const routes: Routes = [
+//   {path: 'passengers', component: PassengerDashboardComponent}
+// ]
+
+
+// How to get passengers with children (individual passenger details) ?
+
+const routes: Routes = [
+  {path: 'passengers', 
+  children:[
+    {path: '', component: PassengerDashboardComponent},
+    {path: ':id', component: PassengerViewerComponent}
+  ]
+}
+]
 
 
 
@@ -22,7 +40,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forChild(routes)
   ],
   exports: [
     PassengerDashboardComponent,

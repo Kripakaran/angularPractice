@@ -1,1 +1,24 @@
-<app-passenger-viewer></app-passenger-viewer>
+<!-- <app-passenger-viewer></app-passenger-viewer> -->
+<div class="nav">
+    
+    <!-- 
+        static version
+        
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        Home
+    </a>
+    <a routerLink="/oops" routerLinkActive="active">
+        404
+    </a> -->
+
+    <!-- dynamic version -->
+    
+    <a  *ngFor = "let item of nav;"
+    [routerLink]="item.link" 
+    routerLinkActive="active" 
+    [routerLinkActiveOptions]="{exact: item.exact}">
+        {{ item.name }}
+    </a>
+</div>
+
+<router-outlet></router-outlet>
