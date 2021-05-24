@@ -5,45 +5,27 @@
       "name": "Kripakaran",
       "checkedIn": true,
       "checkedDate": 1490742000000,
-      "children": [
-        {
-          "name": "xxx",
-          "age": 12
-        }
-      ]
+      "baggage": ""
     },
     {
       "id": 2,
       "name": "Karan",
       "checkedIn": false,
-      "children": [
-        {
-          "name": "xxx",
-          "age": 12
-        },
-        {
-          "name": "xyz",
-          "age": 14
-        }
-      ]
+      "baggage": ""
     },
     {
       "id": 3,
       "name": "Prabhu",
       "checkedIn": true,
-      "checkedDate": 1491606000000
+      "checkedDate": 1491606000000,
+      "baggage": ""
     },
     {
       "id": 4,
       "name": "Hema Devi",
       "checkedIn": true,
       "checkedDate": 1490742000000,
-      "children": [
-        {
-          "name": "yyy",
-          "age": 23
-        }
-      ]
+      "baggage": ""
     }
   ]
 }
