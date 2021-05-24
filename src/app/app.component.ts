@@ -1,6 +1,7 @@
 import { ThrowStmt } from '@angular/compiler/src/output/output_ast';
 import { Component } from '@angular/core';
 
+
 interface nav {
   link: string,
   name: string,
@@ -14,11 +15,12 @@ interface nav {
 })
 export class AppComponent {
 
-  nav : nav[] = [
+   
+  nav : nav[]= [
     {
       link: '/',
       name: 'Home',
-      exact: true
+      exact: true  
     },
     {
       link: '/oops',
@@ -31,4 +33,5 @@ export class AppComponent {
       exact: true
     }
   ]
-}
+
+    }
